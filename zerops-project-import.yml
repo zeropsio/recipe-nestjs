@@ -6,6 +6,7 @@ services:
     type: object-storage
     objectStoragePolicy: public-read
     objectStorageSize: 2
+    priority: 10
 
   - hostname: mailpit
     type: go@1

@@ -66,6 +66,7 @@ services:
     ports:
       - port: 3000
         httpSupport: true
+    priority: 5
 
   - hostname: adminer
     type: php-apache@8.0+2.4

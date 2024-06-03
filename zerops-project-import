@@ -24,6 +24,7 @@ services:
   - hostname: app
     type: nginx@1.22
     buildFromGit: https://github.com/zeropsio/recipe-backend-ui@main
+    enableSubdomainAccess: true
     envSecrets:
       API_URL: ${api_zeropsSubdomain}
     nginxConfig: |-
@@ -45,6 +46,7 @@ services:
   - hostname: api
     type: nodejs@20
     buildFromGit: https://github.com/zeropsio/recipe-nestjs-backend@main
+    enableSubdomainAccess: true
     envSecrets:
       DATABASE_HOST: db
       DATABASE_NAME: db

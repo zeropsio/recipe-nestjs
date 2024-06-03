@@ -1,0 +1,15 @@
+zerops:
+  - setup: api
+    build:
+      base: nodejs@20
+      buildCommands:
+        - npm i
+        - npm run build
+      deploy:
+        - ./dist
+        - node_modules
+        - package.json
+    run:
+      initCommands:
+        - zsc execOnce $RANDOM npm run typeorm:migrate
+      start: npm run start:prod

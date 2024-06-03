@@ -1,0 +1,73 @@
+project:
+  name: zerops-nestjs
+
+services:
+  - hostname: storage
+    type: object-storage
+    objectStorageSize: 2
+
+  - hostname: mailpit
+    type: go@1
+    ports:
+      - port: 8025
+        httpSupport: true
+      - port: 1025
+    buildFromGit: https://github.com/zeropsio/recipe-mailpit@main
+    enableSubdomainAccess: true
+    minContainers: 1
+
+  - hostname: db
+    type: postgresql@16
+    mode: NON_HA
+    priority: 10
+
+  - hostname: app
+    type: nginx@1.22
+    buildFromGit: https://github.com/zeropsio/recipe-backend-ui@main
+    envSecrets:
+      API_URL: ${api_zeropsSubdomain}
+    nginxConfig: |-
+      server {
+          listen 80 default_server;
+          listen [::]:80 default_server;
+
+          server_name _;
+          root /var/www;
+
+          location / {
+              try_files $uri $uri/ /index.html;
+          }
+
+          access_log syslog:server=unix:/dev/log,facility=local1 default_short;
+          error_log syslog:server=unix:/dev/log,facility=local1;
+      }
+
+  - hostname: api
+    type: nodejs@20
+    buildFromGit: https://github.com/zeropsio/recipe-nestjs-backend@main
+    envSecrets:
+      DATABASE_HOST: db
+      DATABASE_NAME: db
+      DATABASE_PASSWORD: ${db_password}
+      DATABASE_PORT: "5432"
+      DATABASE_USERNAME: db
+      SMTP_EMAIL_FROM: recipe@zerops.io
+      SMTP_HOST: mailpit
+      SMTP_PASS: ""
+      SMTP_PORT: "1025"
+      SMTP_USER: ""
+      STORAGE_ACCESS_KEY_ID: ${storage_accessKeyId}
+      STORAGE_ENDPOINT: ${storage_apiUrl}
+      STORAGE_REGION: us-east-1
+      STORAGE_S3_BUCKET_NAME: ${storage_bucketName}
+      STORAGE_SECRET_ACCESS_KEY: ${storage_secretAccessKey}
+    ports:
+      - port: 3000
+        httpSupport: true
+
+  - hostname: adminer
+    type: php-apache@8.0+2.4
+    buildFromGit: https://github.com/zeropsio/recipe-adminer@old
+    enableSubdomainAccess: true
+    minContainers: 1
+    maxContainers: 1

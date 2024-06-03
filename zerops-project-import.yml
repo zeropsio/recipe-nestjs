@@ -4,6 +4,7 @@ project:
 services:
   - hostname: storage
     type: object-storage
+    objectStoragePolicy: public-read
     objectStorageSize: 2
 
   - hostname: mailpit

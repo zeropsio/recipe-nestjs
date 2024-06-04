@@ -25,15 +25,10 @@ services:
     priority: 10
 
   - hostname: adminer
-    buildFromGit: https://github.com/zeropsio/recipe-adminer@old
+    buildFromGit: https://github.com/zeropsio/recipe-adminer@main
     enableSubdomainAccess: true
 
   - hostname: mailpit
-    type: go@1
-    ports:
-      - port: 8025
-        httpSupport: true
-      - port: 1025
-    buildFromGit: https://github.com/zeropsio/recipe-mailpit@main
+    buildFromGit: https://github.com/zeropsio/recipe-mailpit@alpha
     enableSubdomainAccess: true
 

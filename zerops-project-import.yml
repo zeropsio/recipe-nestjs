@@ -3,7 +3,7 @@ project:
 
 services:
   - hostname: api
-    buildFromGit: https://github.com/zeropsio/recipe-nestjs-backend@alpha
+    buildFromGit: https://github.com/zeropsio/recipe-nestjs@alpha
     enableSubdomainAccess: true
     priority: 5
 

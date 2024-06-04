@@ -1,5 +1,7 @@
 project:
-  name: zerops-nestjs
+  name: nestjs
+  tags:
+    - zerops-recipe
 
 services:
   - hostname: api

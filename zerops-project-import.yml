@@ -5,11 +5,13 @@ project:
 
 services:
   - hostname: api
+    type: nodejs@20
     buildFromGit: https://github.com/zeropsio/recipe-nestjs@alpha
     enableSubdomainAccess: true
     priority: 5
 
   - hostname: app
+    type: static
     buildFromGit: https://github.com/zeropsio/recipe-backend-ui@alpha
     enableSubdomainAccess: true
 
@@ -25,10 +27,12 @@ services:
     priority: 10
 
   - hostname: adminer
+    type: php-apache@8.1
     buildFromGit: https://github.com/zeropsio/recipe-adminer@main
     enableSubdomainAccess: true
 
   - hostname: mailpit
+    type: go@1
     buildFromGit: https://github.com/zeropsio/recipe-mailpit@alpha
     enableSubdomainAccess: true
 

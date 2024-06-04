@@ -10,6 +10,26 @@ zerops:
         - node_modules
         - package.json
     run:
+      base: nodejs@20
+      ports:
+        - port: 3000
+          httpSupport: true
+      envVariables:
+        DATABASE_HOST: db
+        DATABASE_NAME: db
+        DATABASE_PASSWORD: ${db_password}
+        DATABASE_PORT: "5432"
+        DATABASE_USERNAME: db
+        SMTP_EMAIL_FROM: recipe@zerops.io
+        SMTP_HOST: mailpit
+        SMTP_PASS: ""
+        SMTP_PORT: "1025"
+        SMTP_USER: ""
+        STORAGE_ACCESS_KEY_ID: ${storage_accessKeyId}
+        STORAGE_ENDPOINT: ${storage_apiUrl}
+        STORAGE_REGION: us-east-1
+        STORAGE_S3_BUCKET_NAME: ${storage_bucketName}
+        STORAGE_SECRET_ACCESS_KEY: ${storage_secretAccessKey}
       initCommands:
-        - zsc execOnce $RANDOM npm run typeorm:migrate
+        - zsc execOnce $ZEROPS_appVersionId npm run typeorm:migrate
       start: npm run start:prod

@@ -5,7 +5,7 @@ zerops:
       buildCommands:
         - npm i
         - npm run build
-      deploy:
+      deployFiles:
         - ./dist
         - node_modules
         - package.json

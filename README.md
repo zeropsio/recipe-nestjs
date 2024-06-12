@@ -1,6 +1,6 @@
 # Zerops x Nest.js
 
-![nestjs](https://github.com/zeropsio/recipe-nestjs/assets/1303561/5eb7e542-914f-41f3-9c14-0b7a492fd705)
+![nestjs](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/cover-nestjs.png)
 
 [Nest.js](https://nestjs.com/) is an amazing and popular Node.js framework. This recipe aims to showcase, through a simple file upload demo application, advanced concepts that unlock the scalebility powers of Nest.js.
 
@@ -8,7 +8,7 @@
 You can either click the deploy button to deploy directly on Zerops, or manually copy the [import yaml](https://github.com/zeropsio/recipe-nestjs/blob/main/zerops-project-import.yml) to the import dialog in the Zerops app.
 
 <a href="https://app.zerops.io/recipe/nestjs">
-    <img width="250" alt="Deploy on Zerops" src="https://github.com/zeropsio/recipe-laravel-jetstream/assets/1303561/21cf77dd-cded-4e41-8e76-24540a809ccc">
+    <img width="250" alt="Deploy on Zerops" src="https://github.com/zeropsio/recipe-shared-assets/blob/main/deploy-button/deploy-button.png">
 </a>
 
 <br/>

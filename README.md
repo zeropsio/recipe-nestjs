@@ -4,6 +4,8 @@
 
 [Nest.js](https://nestjs.com/) is an amazing and popular Node.js framework. This recipe aims to showcase, through a simple file upload demo application, advanced concepts that unlock the scalebility powers of Nest.js.
 
+<br/>
+
 ## Deploy on Zerops
 You can either click the deploy button to deploy directly on Zerops, or manually copy the [import yaml](https://github.com/zeropsio/recipe-nestjs/blob/main/zerops-project-import.yml) to the import dialog in the Zerops app.
 

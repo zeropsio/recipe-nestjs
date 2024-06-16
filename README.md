@@ -47,3 +47,8 @@ If you want to modify your own app running Nest.js to efficiently run on Zerops,
 - Utilize Zerops environment variables management to securely pass [environment variables](https://github.com/zeropsio/recipe-nestjs/blob/main/src/config/db.config.ts#L8-L12) to your app
 - Add multer, aws-sdk packages and [utilize them](https://github.com/zeropsio/recipe-nestjs/blob/main/src/file/file.service.ts#L26-L36) to upload files to S3 compatible Zerops object storage
 
+
+<br/>
+<br/>
+
+Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).

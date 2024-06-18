@@ -41,7 +41,7 @@ Base of the recipe is ready for production, the difference comes down to:
 
 ## Changes made over the default installation
 
-If you want to modify your own app running Nest.js to efficiently run on Zerops, these are the general steps we took:
+If you want to modify your Nest.js existing app to efficiently run on Zerops, these are the general steps we took:
 
 - Add [zerops.yml](https://github.com/zeropsio/recipe-nestjs/blob/main/zerops.yml) to your repository, our example includes health checks and idempotent migrations
 - Utilize Zerops environment variables management to securely pass [environment variables](https://github.com/zeropsio/recipe-nestjs/blob/main/src/config/db.config.ts#L8-L12) to your app

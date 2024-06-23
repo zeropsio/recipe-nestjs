@@ -1,8 +1,8 @@
 # Zerops x Nest.js
+[Nest.js](https://nestjs.com/) is an amazing and popular Node.js framework. This recipe aims to showcase, through a simple file upload demo application, advanced concepts that unlock the scalebility powers of Nest.js by running it on [Zerops](https://zerops.io/).
 
 ![nestjs](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/cover-nestjs.png)
 
-[Nest.js](https://nestjs.com/) is an amazing and popular Node.js framework. This recipe aims to showcase, through a simple file upload demo application, advanced concepts that unlock the scalebility powers of Nest.js by running it on [Zerops](https://zerops.io/).
 
 <br/>
 
@@ -11,7 +11,6 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 
 [![Deploy on Zerops](https://github.com/zeropsio/recipe-shared-assets/blob/main/deploy-button/green/deploy-button.svg)](https://app.zerops.io/recipe/nestjs)
 
-<br/>
 <br/>
 
 ## Recipe features

@@ -1,6 +1,5 @@
 # Zerops x Nest.js
-
-[Nest.js](https://nestjs.com/) is an amazing and popular Node.js framework. This recipe aims to showcase, through a simple file upload demo application, advanced concepts that unlock the scalebility powers of Nest.js.
+[Nest.js](https://nestjs.com/) is an amazing and popular Node.js framework. This recipe aims to showcase, through a simple file upload demo application, advanced concepts that unlock the scalebility powers of Nest.js by running it on [Zerops](https://zerops.io/).
 
 ![nestjs](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/svg/cover-nestjs.svg)
 
@@ -11,7 +10,6 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 
 [![Deploy on Zerops](https://github.com/zeropsio/recipe-shared-assets/blob/main/deploy-button/green/deploy-button.svg)](https://app.zerops.io/recipe/nestjs)
 
-<br/>
 <br/>
 
 ## Recipe features
@@ -30,18 +28,23 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 
 Base of the recipe is ready for production, the difference comes down to:
 
-- Use highly available version of the PostgreSQL database (change ***mode*** from ***NON_HA*** to ***HA*** in recipe YAML, ***db*** service section)
-- Use at least two containers for the Nest.js service to achieve high reliability and resilience (add ***minContainers: 2*** in recipe YAML, ***api*** service section)
-- Use production-ready third-party SMTP server instead of Mailpit (change ***SMTP_**** secret variables in recipe YAML, ***api*** service section)
-- Disable public access to Adminer or remove it altogether (remove service adminer from recipe YAML)
+- Use highly available version of the PostgreSQL database (change `mode` from `NON_HA` to `HA` in recipe YAML, `db` service section)
+- Use at least two containers for the Nest.js service to achieve high reliability and resilience (add `minContainers: 2` in recipe YAML, `api` service section)
+- Use production-ready third-party SMTP server instead of Mailpit (change `SMTP_` secret variables in recipe YAML, `api` service section)
+- Disable public access to Adminer or remove it altogether (remove service `adminer` from recipe YAML)
 
 <br/>
 
 ## Changes made over the default installation
 
-If you want to modify your own app running Nest.js to efficiently run on Zerops, these are the general steps we took:
+If you want to modify your Nest.js existing app to efficiently run on Zerops, these are the general steps we took:
 
 - Add [zerops.yml](https://github.com/zeropsio/recipe-nestjs/blob/main/zerops.yml) to your repository, our example includes health checks and idempotent migrations
 - Utilize Zerops environment variables management to securely pass [environment variables](https://github.com/zeropsio/recipe-nestjs/blob/main/src/config/db.config.ts#L8-L12) to your app
 - Add multer, aws-sdk packages and [utilize them](https://github.com/zeropsio/recipe-nestjs/blob/main/src/file/file.service.ts#L26-L36) to upload files to S3 compatible Zerops object storage
 
+
+<br/>
+<br/>
+
+Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).

@@ -9,6 +9,9 @@ services:
     buildFromGit: https://github.com/zeropsio/recipe-nestjs
     enableSubdomainAccess: true
     priority: 5
+    verticalAutoscaling:
+      minRam: 0.25
+      minFreeRamGB: 0.125
 
   - hostname: app
     type: static
